@@ -1,7 +1,6 @@
 class CartsController < ApplicationController
 
   def show
-    @msg = "Your cart is empty, Would you like to add something?"
   end
 
   def add_item
