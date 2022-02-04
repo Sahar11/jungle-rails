@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   root to: 'products#index'
   
+  get '/about', to: 'about#index'
+  
   # resources :category do 
   #   resources :products
   # end
