@@ -13,6 +13,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
+    params[:user][:email].strip.downcase!
     params.require(:user).permit(:firstname, :lastname, :email, :password, :password_confirmation)
   end
 

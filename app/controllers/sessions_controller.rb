@@ -4,15 +4,11 @@ class SessionsController < ApplicationController
   end
 
   def create
-    # user = User.new
-    # if user.authenticate_with_credentials(params[:email], params[:password])
-    p params[:password]
-    if user = User.authenticate_with_credentials(params[:sessions][:email], params[:sessions][:password])
-      session[:user_id] = user.id 
+    if (user = User.authenticate_with_credentials(session_params))
+      session[:user_id] = user.id
       redirect_to '/'
     else
-      redirect_to "/login"
-      flash.alert = "User not found"
+      redirect_to '/login', notice: 'Login failed, incorrect password or email'
     end
   end
 
@@ -21,4 +17,13 @@ class SessionsController < ApplicationController
     redirect_to '/login'
   end
 
+  private
+
+  def session_params
+    params['/login'][:email].strip.downcase!
+    params.require('/login').permit(
+      :email,
+      :password
+    )
+  end
 end
