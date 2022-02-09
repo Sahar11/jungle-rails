@@ -32,22 +32,22 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 * PostgreSQL 9.x
 * Stripe
 
-###Login Page
+### Login Page
 
 ![](docs/login.png)
 
-###SignUp Page
+### SignUp Page
 
 ![](docs/signup.png)
 
-###Products
+### Products
 
 ![](docs/products.png)
 
-###Categories
+### Categories
 
 ![](docs/categories.png)
 
-###Cart
+### Cart
 
 ![](docs/cart.png)
